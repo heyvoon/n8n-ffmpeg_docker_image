@@ -1,6 +1,6 @@
 services:
   n8n:
-    image: heyvoon/n8n-ffmpeg:latest
+    image: ghcr.io/heyvoon/n8n-ffmpeg:latest
     container_name: n8n
     restart: unless-stopped
     environment:
