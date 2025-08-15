@@ -1,0 +1,18 @@
+services:
+  n8n:
+    image: ghcr.io/<your-gh-username>/n8n-ffmpeg:latest
+    container_name: n8n
+    restart: unless-stopped
+    environment:
+      GENERIC_TIMEZONE: Europe/Madrid
+      TZ: Europe/Madrid
+      N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: "true"
+      N8N_RUNNERS_ENABLED: "true"
+    ports:
+      - "5678:5678"
+    volumes:
+      - n8n_data:/home/node/.n8n
+    pull_policy: always
+volumes:
+  n8n_data:
+    external: true
